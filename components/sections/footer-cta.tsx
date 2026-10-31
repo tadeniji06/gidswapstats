@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -119,7 +118,7 @@ export function FooterCtaSection() {
               {link.label}
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 bg-[#2563EB] transition-transform duration-300 ease-out group-hover:scale-x-100"
+                className="pointer-events-none absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 bg-[#2563EB] transition-transform duration-300 ease-out group-hover:scale-x-100"
               />
             </motion.a>
           ))}
