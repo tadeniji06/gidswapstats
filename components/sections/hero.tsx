@@ -1,38 +1,27 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, ArrowLeftRight } from "lucide-react";
 import { SplitText } from "@/components/primitives/split-text";
 import { MagneticButton } from "@/components/primitives/magnetic-button";
+import { NetworkLogo } from "@/components/primitives/network-logo";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
-
-const HeroScene = dynamic(() => import("@/components/three/hero-scene"), {
-  ssr: false,
-  loading: () => (
-    <div
-      aria-hidden="true"
-      className="flex h-full w-full items-center justify-center"
-    >
-      <div className="h-64 w-64 rounded-full border-2 border-[#2563EB]/25" />
-    </div>
-  ),
-});
 
 /**
  * SECTION 1 — CINEMATIC HERO SCENE
- * - Warm Stone Canvas (#F3F2EE) with crisp white elevated header & badges, 2px borders, and tactile shadows.
- * - Brand Blue (#2563EB) accents + Brand Blue 3D Wireframe Icosahedron in background.
+ * - Clean Warm Stone Canvas (#F3F2EE) with zero overwhelming 3D background clutter.
+ * - Restrained peripheral crypto-settlement nodes on wide screens that tell the GidSwap swap story
+ *   without overlapping or competing with the central typography.
  * - Dramatic 3D Jumping Headline ("REAL TRANSACTIONS. REAL VOLUME. REAL PROOF.").
  */
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const sceneWrapRef = useRef<HTMLDivElement | null>(null);
+  const railsWrapRef = useRef<HTMLDivElement | null>(null);
   const headlineWrapRef = useRef<HTMLDivElement | null>(null);
   const subWrapRef = useRef<HTMLDivElement | null>(null);
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -67,13 +56,12 @@ export function HeroSection() {
         },
       });
 
-      if (sceneWrapRef.current) {
+      if (railsWrapRef.current) {
         tl.to(
-          sceneWrapRef.current,
+          railsWrapRef.current,
           {
-            scale: 0.4,
-            y: 160,
-            opacity: 0.25,
+            y: -60,
+            opacity: 0,
             ease: "power2.inOut",
           },
           0
@@ -153,12 +141,73 @@ export function HeroSection() {
         </div>
       </header>
 
-      {/* Layer 1: 3D Centerpiece in Brand Blue (React Three Fiber) */}
+      {/* Subtle Peripheral Crypto Story Nodes (Framing the sides cleanly without touching center text) */}
       <div
-        ref={sceneWrapRef}
-        className="pointer-events-auto absolute inset-0 z-0 mx-auto flex h-full w-full max-w-4xl items-center justify-center opacity-85 will-change-transform"
+        ref={railsWrapRef}
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-1/2 z-0 mx-auto hidden max-w-7xl -translate-y-1/2 items-center justify-between px-8 xl:flex"
       >
-        <HeroScene />
+        {/* Left Crypto Rail: Token In -> Swap */}
+        <motion.div
+          animate={reducedMotion ? undefined : { y: [-6, 6, -6] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col gap-3"
+        >
+          <div className="flex items-center gap-2.5 rounded-xl border-2 border-[#0A0A0B] bg-white px-3.5 py-2 shadow-[3px_3px_0px_0px_#0A0A0B]">
+            <Image
+              src="/images/usdt.png"
+              alt="USDT"
+              width={22}
+              height={22}
+              className="h-5 w-5 rounded-full"
+            />
+            <span className="font-mono text-[11px] font-bold text-[#0A0A0B]">
+              USDT ⇄ NGN
+            </span>
+            <span className="rounded bg-[#2563EB] px-1.5 py-0.5 font-mono text-[9px] font-bold text-white">
+              $55K
+            </span>
+          </div>
+
+          <div className="ml-4 flex items-center gap-2.5 rounded-xl border-2 border-[#0A0A0B] bg-white px-3.5 py-2 shadow-[3px_3px_0px_0px_#2563EB]">
+            <Image
+              src="/images/bitcoin.png"
+              alt="BTC"
+              width={22}
+              height={22}
+              className="h-5 w-5 rounded-full"
+            />
+            <span className="font-mono text-[11px] font-bold text-[#0A0A0B]">
+              BTC ⇄ USDT
+            </span>
+            <span className="rounded bg-[#0A0A0B] px-1.5 py-0.5 font-mono text-[9px] font-bold text-white">
+              $40K
+            </span>
+          </div>
+        </motion.div>
+
+        {/* Right Crypto Rail: Multi-Chain Settlement */}
+        <motion.div
+          animate={reducedMotion ? undefined : { y: [6, -6, 6] }}
+          transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-end gap-3"
+        >
+          <div className="flex items-center gap-2 rounded-xl border-2 border-[#0A0A0B] bg-white px-3.5 py-2 shadow-[3px_3px_0px_0px_#0A0A0B]">
+            <NetworkLogo name="BNB Smart Chain" className="h-5 w-5 rounded border shadow-none" />
+            <NetworkLogo name="Base" className="h-5 w-5 rounded border shadow-none" />
+            <NetworkLogo name="Ethereum" className="h-5 w-5 rounded border shadow-none" />
+            <span className="font-mono text-[11px] font-bold text-[#0A0A0B]">
+              5 CHAINS
+            </span>
+          </div>
+
+          <div className="mr-4 flex items-center gap-2 rounded-xl border-2 border-[#0A0A0B] bg-[#0A0A0B] px-3.5 py-2 text-white shadow-[3px_3px_0px_0px_#2563EB]">
+            <ArrowLeftRight className="h-3.5 w-3.5 text-[#60A5FA]" />
+            <span className="font-mono text-[11px] font-bold">
+              ~04:00 SETTLEMENT
+            </span>
+          </div>
+        </motion.div>
       </div>
 
       {/* Foreground Content */}

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -9,10 +8,6 @@ import { ArrowUpRight } from "lucide-react";
 import { SplitText } from "@/components/primitives/split-text";
 import { MagneticButton } from "@/components/primitives/magnetic-button";
 import { EASE_OUT_EXPO } from "@/lib/animations";
-
-const HeroScene = dynamic(() => import("@/components/three/hero-scene"), {
-  ssr: false,
-});
 
 const FOOTER_LINKS = [
   { label: "Start Swapping", href: "https://gidswap.com", external: true },
@@ -26,7 +21,7 @@ const FOOTER_LINKS = [
 
 /**
  * SECTION 7 — FOOTER CTA (FINAL SCENE)
- * - Framed inside a bold high-contrast card with 2px #0A0A0B border & Brand Blue (#2563EB) tactile offset shadow.
+ * - Clean, distraction-free showcase card with 2px #0A0A0B border & Brand Blue (#2563EB) tactile offset shadow.
  * - Massive headline: "START SWAPPING. START TRADING."
  * - Bigger official GidSwap Light-Mode logo (`/images/Gidswaplogo.png`).
  * - Dominant CTA button with strong visual priority.
@@ -38,14 +33,6 @@ export function FooterCtaSection() {
       className="relative z-10 overflow-hidden bg-[#F3F2EE] px-6 pt-20 pb-16 md:pt-32"
     >
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border-2 border-[#0A0A0B] bg-white px-6 py-20 shadow-[8px_8px_0px_0px_#2563EB] sm:px-12 md:py-28">
-        {/* Returning 3D Brand Blue Icosahedron Centerpiece (centered behind text) */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-auto absolute top-1/2 left-1/2 z-0 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 opacity-75"
-        >
-          <HeroScene scale={0.78} />
-        </div>
-
         <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center">
           {/* Bigger Official GidSwap Light Mode Logo */}
           <Link

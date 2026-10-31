@@ -99,7 +99,7 @@ export function CursorProvider({ children }: CursorProviderProps) {
             x: springX,
             y: springY,
           }}
-          className="pointer-events-none fixed top-0 left-0 z-[100] -translate-x-1/2 -translate-y-1/2"
+          className="pointer-events-none fixed top-0 left-0 z-100 -translate-x-1/2 -translate-y-1/2"
         >
           <motion.div
             animate={{
