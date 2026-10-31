@@ -14,9 +14,9 @@ const quantico = Quantico({
 });
 
 export const metadata: Metadata = {
-  title: "GidSwap — Proof of Work & Volume Telemetry ($85,560+)",
+  title: "GidSwap — Proof of Work & Volume Telemetry ($95,000+)",
   description:
-    "GidSwap proof-of-work showcase: $85,560+ settled volume ($45,560 Onramp/Offramp + $40,000 Crypto-to-Crypto Swaps), 1,500 transactions, and 5 networks.",
+    "GidSwap proof-of-work showcase: $95,000+ settled volume ($55,000 Onramp/Offramp + $40,000 Crypto-to-Crypto Swaps), 1,500 transactions, and 5 networks.",
   manifest: "/manifest.json",
 };
 

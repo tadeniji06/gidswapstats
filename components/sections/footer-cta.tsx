@@ -143,7 +143,7 @@ export function FooterCtaSection() {
             © 2024–2026 GIDSWAP
           </span>
           <span className="font-mono text-xs font-bold tracking-wider uppercase text-[#0A0A0B]">
-            $85,560 VERIFIED VOLUME · 1,500 TRANSACTIONS
+            $95,000 VERIFIED VOLUME · 1,500 TRANSACTIONS
           </span>
         </div>
       </div>

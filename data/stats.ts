@@ -1,11 +1,11 @@
 export const stats = {
-  totalVolume: 85560,
-  onrampOfframpVolume: 45560,
+  totalVolume: 95000,
+  onrampOfframpVolume: 55000,
   cryptoToCryptoVolume: 40000,
   totalTransactions: 1500,
   settledTransactions: 900,
   successRate: 60,
-  averageTransactionSize: 57,
+  averageTransactionSize: 63,
   averageProcessingMinutes: 4,
   dateRange: { from: "2024-01-01", to: "2026-10-31" },
   networks: [
@@ -23,9 +23,9 @@ export const stats = {
 
 export const tooltipCopy = {
   totalVolume:
-    "Combined USD value ($85,560) of all settled onramp, offramp ($45,560), and crypto-to-crypto swap ($40,000) transactions processed between Jan 2024 – Oct 2026.",
+    "Combined USD value ($95,000) of all settled onramp, offramp ($55,000), and crypto-to-crypto swap ($40,000) transactions processed between Jan 2024 – Oct 2026.",
   onrampOfframpVolume:
-    "Fiat-to-crypto and crypto-to-fiat conversions ($45,560) settled directly to local bank accounts.",
+    "Fiat-to-crypto and crypto-to-fiat conversions ($55,000) settled directly to local bank accounts.",
   cryptoToCryptoVolume:
     "Direct crypto-to-crypto swaps ($40,000) completed seamlessly across supported networks.",
   successRate:

@@ -221,7 +221,7 @@ export function TransactionFlowSection() {
           </div>
 
           <div className="mt-5 flex items-center justify-between border-t-2 border-[#0A0A0B]/10 pt-4 font-mono text-[10px] font-bold text-[#0A0A0B]">
-            <span className="text-[#2563EB]">$45.5K FIAT</span>
+            <span className="text-[#2563EB]">$55K FIAT</span>
             <span>$40K SWAPS</span>
           </div>
         </motion.div>

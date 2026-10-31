@@ -137,7 +137,7 @@ export function HeroSection() {
           <div className="hidden items-center gap-2 rounded-xl border-2 border-[#0A0A0B] bg-[#F3F2EE] px-4 py-2 md:flex">
             <span className="h-2.5 w-2.5 rounded-full bg-[#2563EB]" />
             <span className="font-mono text-xs font-bold tracking-[0.14em] uppercase text-[#0A0A0B]">
-              $85,560 VERIFIED VOLUME
+              $95,000 VERIFIED VOLUME
             </span>
           </div>
 
@@ -194,9 +194,9 @@ export function HeroSection() {
         <div ref={subWrapRef} className="mt-7 max-w-2xl will-change-transform">
           <p className="font-sans text-base leading-relaxed font-medium text-zinc-700 sm:text-lg">
             <SplitText
-              text="Buy, Sell & Swap Crypto in seconds. $85,560 in verified volume across $45,560 Onramp & Offramp settlements and $40,000 in direct Crypto-to-Crypto swaps."
+              text="Buy, Sell & Swap Crypto in seconds. $95,000 in verified volume across $55,000 Onramp & Offramp settlements and $40,000 in direct Crypto-to-Crypto swaps."
               mode="words-mask"
-              highlightWords={["$85,560", "$45,560", "$40,000"]}
+              highlightWords={["$95,000", "$55,000", "$40,000"]}
             />
           </p>
         </div>
@@ -211,7 +211,7 @@ export function HeroSection() {
           <div className="flex items-center gap-2 rounded-xl border-2 border-[#0A0A0B] bg-white px-4 py-2 font-mono text-xs font-bold text-[#0A0A0B] shadow-[3px_3px_0px_0px_#0A0A0B]">
             <span className="h-2.5 w-2.5 rounded-full bg-[#2563EB]" />
             <span>ONRAMP / OFFRAMP:</span>
-            <strong>$45,560</strong>
+            <strong>$55,000</strong>
           </div>
           <div className="flex items-center gap-2 rounded-xl border-2 border-[#0A0A0B] bg-[#0A0A0B] px-4 py-2 font-mono text-xs font-bold text-white shadow-[3px_3px_0px_0px_#2563EB]">
             <span className="h-2.5 w-2.5 rounded-full bg-[#3B82F6]" />

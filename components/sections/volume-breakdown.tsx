@@ -15,8 +15,8 @@ import { formatCurrency } from "@/lib/utils";
 /**
  * SECTION 3 — VOLUME BREAKDOWN (PINNED SCENE TRANSITION)
  * - Warm stone background (#F3F2EE) with crisp white cards, 2px borders, and solid Brand Blue (#2563EB) accents.
- * - Left panel ("ONRAMP / OFFRAMP VOLUME" — $45,560) and Right panel ("CRYPTO-TO-CRYPTO VOLUME" — $40,000)
- *   slide horizontally toward each other and converge into the central "TOTAL VOLUME" ($85,560) card.
+ * - Left panel ("ONRAMP / OFFRAMP VOLUME" — $55,000) and Right panel ("CRYPTO-TO-CRYPTO VOLUME" — $40,000)
+ *   slide horizontally toward each other and converge into the central "TOTAL VOLUME" ($95,000) card.
  */
 export function VolumeBreakdownSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -44,7 +44,7 @@ export function VolumeBreakdownSection() {
     const counterState = {
       onramp: 0,
       crypto: 0,
-      total: 45560,
+      total: 55000,
     };
 
     const ctx = gsap.context(() => {
@@ -206,7 +206,7 @@ export function VolumeBreakdownSection() {
               <div className="mt-6 flex items-center justify-between border-t-2 border-[#0A0A0B]/10 pt-4 font-mono text-xs font-bold text-zinc-600">
                 <span>SHARE OF VOLUME</span>
                 <span className="rounded-md border border-[#0A0A0B] bg-[#2563EB] px-2.5 py-0.5 text-white">
-                  53.2% · FIAT RAILS
+                  57.9% · FIAT RAILS
                 </span>
               </div>
             </div>
@@ -242,7 +242,7 @@ export function VolumeBreakdownSection() {
               <div className="mt-6 flex items-center justify-between border-t-2 border-[#0A0A0B]/10 pt-4 font-mono text-xs font-bold text-zinc-600">
                 <span>SHARE OF VOLUME</span>
                 <span className="rounded-md border border-[#0A0A0B] bg-[#0A0A0B] px-2.5 py-0.5 text-white">
-                  46.8% · DIRECT SWAPS
+                  42.1% · DIRECT SWAPS
                 </span>
               </div>
             </div>
@@ -285,7 +285,7 @@ export function VolumeBreakdownSection() {
                 transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
                 className="relative min-h-[290px] w-full [transform-style:preserve-3d]"
               >
-                {/* FRONT FACE: Solid Black High-Contrast Card ($85,560) with Brand Blue Shadow */}
+                {/* FRONT FACE: Solid Black High-Contrast Card ($95,000) with Brand Blue Shadow */}
                 <div className="absolute inset-0 flex flex-col justify-between rounded-3xl border-2 border-[#0A0A0B] bg-[#0A0A0B] p-8 text-white shadow-[8px_8px_0px_0px_#2563EB] [backface-visibility:hidden]">
                   <div className="flex items-center justify-between">
                     <div className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-1">
@@ -314,7 +314,7 @@ export function VolumeBreakdownSection() {
                       {formatCurrency(totalCount)}
                     </div>
                     <p className="mt-2 font-sans text-xs text-zinc-300">
-                      Combined settled throughput across Onramp/Offramp ($45,560) and Crypto-to-Crypto Swaps ($40,000).
+                      Combined settled throughput across Onramp/Offramp ($55,000) and Crypto-to-Crypto Swaps ($40,000).
                     </p>
                   </div>
 
@@ -322,17 +322,17 @@ export function VolumeBreakdownSection() {
                   <div>
                     <div className="flex h-3 w-full overflow-hidden rounded-full border border-zinc-700 bg-zinc-800">
                       <div
-                        style={{ width: "53.2%" }}
+                        style={{ width: "57.9%" }}
                         className="h-full bg-[#2563EB]"
                       />
                       <div
-                        style={{ width: "46.8%" }}
+                        style={{ width: "42.1%" }}
                         className="h-full bg-white"
                       />
                     </div>
                     <div className="mt-2.5 flex justify-between font-mono text-[11px] font-bold text-zinc-300">
-                      <span className="text-[#60A5FA]">ON/OFFRAMP: $45,560 (53%)</span>
-                      <span className="text-white">CRYPTO SWAPS: $40,000 (47%)</span>
+                      <span className="text-[#60A5FA]">ON/OFFRAMP: $55,000 (58%)</span>
+                      <span className="text-white">CRYPTO SWAPS: $40,000 (42%)</span>
                     </div>
                   </div>
                 </div>
@@ -354,7 +354,7 @@ export function VolumeBreakdownSection() {
                         Fiat Onramp / Offramp
                       </span>
                       <span className="font-mono text-sm font-bold text-[#2563EB]">
-                        $45,560 (53.2%)
+                        $55,000 (57.9%)
                       </span>
                     </div>
 
@@ -363,7 +363,7 @@ export function VolumeBreakdownSection() {
                         Crypto-to-Crypto Swaps
                       </span>
                       <span className="font-mono text-sm font-bold text-[#60A5FA]">
-                        $40,000 (46.8%)
+                        $40,000 (42.1%)
                       </span>
                     </div>
 
